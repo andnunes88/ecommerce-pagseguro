@@ -124,8 +124,10 @@ $app->post("/checkout", function(){
 	]);
 
 	$order->save();
+	
+	$order->toSession();
 
-	header("Location: /order/".$order->getidorder());
+	header("Location: /payment");
 	exit;
 
 });
